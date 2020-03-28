@@ -11,5 +11,7 @@ class Technology extends Model
     public function store(array $data) {
         return $this->create($data);
     }
-    
+    public function show($id) {
+        return $this->show($id);
+    }
 }

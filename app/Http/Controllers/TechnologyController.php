@@ -17,4 +17,9 @@ class TechnologyController extends Controller
     function store(RequestsStoreTechnology $request) {
        return $this->model->store($request->input());
     }
+
+    function show($id) {
+        $technology = $this->model->find($id);
+       return view('show', ['technology' => $technology]);
+    }
 }
