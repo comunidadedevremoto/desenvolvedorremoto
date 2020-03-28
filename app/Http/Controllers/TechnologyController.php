@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Technology;
-use Illuminate\Http\Request;
+
+use App\Http\Requests\StoreTechnology as RequestsStoreTechnology;
 
 class TechnologyController extends Controller
 {
@@ -13,7 +14,7 @@ class TechnologyController extends Controller
         $this->model = new Technology();
     }
 
-    function store(Request $request) {
+    function store(RequestsStoreTechnology $request) {
        return $this->model->store($request->input());
     }
 }
