@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Technology;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $model;
     /**
      * Create a new controller instance.
      *
@@ -14,6 +16,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->model = new Technology();
     }
 
     /**
@@ -23,6 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $lisOfTechnologies = $this->model->all();
+        return view('home', ['tecnologies' => $lisOfTechnologies]);
     }
 }

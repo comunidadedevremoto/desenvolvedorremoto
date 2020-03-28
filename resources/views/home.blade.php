@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Tecnologias</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <ul class="list-group">
+                        @if (empty($tecnologies))
+                            Nenhuma tecnologia cadastrada...
+                        @endif
+                        @foreach ($tecnologies as $item)
+                            <li class="list-group-item">{{$item->name}}</li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
