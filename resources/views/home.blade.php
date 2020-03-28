@@ -27,19 +27,19 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">id</th>
-                                    <th scope="col">name</th>
-                                    <th scope="col">description</th>
-                                    <th scope="col">action</th>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Opções</th>
                                 </tr>
                             </thead>
                                 <tbody>
                                         @foreach ($tecnologies as $item)
                                     <tr>
                                             <th scope="row">{{$item->id}}</td>
-                                            <td >{{$item->name}}</td>
-                                            <td >{{$item->description}}</td>
-                                            <td >
+                                            <td title="{{$item->name}}">{{substr($item->name, 0, 15)}}</td>
+                                            <td title="{{$item->description}}">{{substr($item->description, 0, 15)}}</td>
+                                            <td>
                                                 <a href='{{url("technology/$item->id")}}'>
                                                     <button type="button" class="btn btn-secondary">Visualizar</button>
                                                 </a>
