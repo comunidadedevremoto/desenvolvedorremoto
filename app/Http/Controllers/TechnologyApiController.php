@@ -17,6 +17,10 @@ class TechnologyApiController extends Controller
         $this->model = new AppTechnology();
     }
 
+    function index() {
+        return $this->model->allTechnologies();
+    }
+
     function store(Request $request) {
         return $this->model->store($request->input());
     }

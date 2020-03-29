@@ -10,7 +10,7 @@ class Technology extends Model
     protected $fillable = ['name', 'description'];
 
     public function allTechnologies() {
-        return $this->all();
+        return $this->all()->sortBy('name');
     }
 
     public function store(array $data) {

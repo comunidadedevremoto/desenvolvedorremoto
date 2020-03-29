@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/technologies', 'TechnologyApiController@index')->name('tecnologyIndex');
 Route::post('/technologies', 'TechnologyApiController@store')->name('tecnologyStore');;
 Route::put('/technologies/{id}', 'TechnologyApiController@update')->name('tecnologyPut');
 Route::get('/technologies/{id}', 'TechnologyApiController@show')->name('tecnologyShow');

@@ -17,6 +17,31 @@ class TechnologyTest extends TestCase
         $this->actingAs($user);
     }
 
+
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testListAllTechnology()
+    {
+        factory(Technology::class, 5)->create();
+        $response = $this->get('/api/technologies');
+        $response->assertStatus(200);
+        $responseData = $response->json();
+        $this->assertCount(5, $responseData);
+        $this->assertArrayHasKey(0, $responseData);
+        $this->assertArrayHasKey('id', $responseData[0]);
+        $this->assertArrayHasKey('name', $responseData[0]);
+        $this->assertArrayHasKey('description', $responseData[0]);
+        $this->assertArrayHasKey('created_at', $responseData[0]);
+        $this->assertArrayHasKey('updated_at', $responseData[0]);
+        $this->assertNotEmpty($responseData[0]['id']);
+        $this->assertNotEmpty($responseData[0]['created_at']);
+        $this->assertNotEmpty($responseData[0]['updated_at']);
+    }
+
+
     /**
      * A basic test example.
      *
