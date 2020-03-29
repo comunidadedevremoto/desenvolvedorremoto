@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/technologies', 'TechnologyController@store');
 Route::get('/technologies/{$id}', 'TechnologyController@show');
+Route::put('/technology/{id}/update', 'TechnologyController@update')->name('tecnologyPut');

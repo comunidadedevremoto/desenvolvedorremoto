@@ -30,7 +30,7 @@
                                     <th scope="col">Código</th>
                                     <th scope="col">Nome</th>
                                     <th scope="col">Descrição</th>
-                                    <th scope="col">Opções</th>
+                                    <th class="text-center" scope="col">Opções</th>
                                 </tr>
                             </thead>
                                 <tbody>
@@ -39,11 +39,11 @@
                                             <th scope="row">{{$item->id}}</td>
                                             <td title="{{$item->name}}">{{substr($item->name, 0, 15)}}</td>
                                             <td title="{{$item->description}}">{{substr($item->description, 0, 15)}}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href='{{url("technology/$item->id")}}'>
                                                     <button type="button" class="btn btn-secondary">Visualizar</button>
                                                 </a>
-                                                <a href="">
+                                                <a href='{{url("technology/$item->id/edit")}}'>
                                                     <button type="button" class="btn btn-info">Editar</button>
                                                 </a>
                                                 <a href="">

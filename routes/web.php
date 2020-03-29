@@ -22,3 +22,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('tecnology');
 Route::get('/technology/{id}', 'TechnologyController@show')->name('tecnology');
+Route::get('/technology/{id}/edit', 'TechnologyController@edit')->name('tecnologyEdit');
+Route::put('/technology/{id}/update', 'TechnologyController@update')->name('tecnologyPut');

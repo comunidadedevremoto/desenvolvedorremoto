@@ -14,4 +14,12 @@ class Technology extends Model
     public function show($id) {
         return $this->show($id);
     }
+
+    public function edit($id) {
+        return $this->edit($id);
+    }
+
+    //public function update(array $data) {
+    //    return $this->update( $data);
+    //}
 }

@@ -20,6 +20,24 @@ class TechnologyController extends Controller
 
     function show($id) {
         $technology = $this->model->find($id);
-       return view('show', ['technology' => $technology]);
+        return view('show', ['technology' => $technology]);
+    }
+
+    function edit($id) {
+        $technologyEdit = $this->model->find($id);
+
+        return view('edit', ['technology' => $technologyEdit]);
+    }
+
+    public function update(RequestsStoreTechnology $request, $id) {
+        $true = $this->model->where(['id'=>$id])->update([
+            'name'=>$request->name,
+            'description'=>$request->description
+        ]);
+        if($true)
+        {
+            return redirect('home');
+
+        }
     }
 }
