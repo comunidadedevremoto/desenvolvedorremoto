@@ -40,4 +40,10 @@ class TechnologyController extends Controller
 
         }
     }
+
+    public function destroy($id) {
+        $technology = $this->model->find($id);
+        $technology->delete();
+        return redirect('home')->with('success', "Dado Excluido com sucesso!!");
+    }
 }

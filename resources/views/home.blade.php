@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        @csrf
             <div class="card">
                 <div class="card-header">Tecnologias</div>
                 <div class="text-right mt-3 mb-2 mr-2">
@@ -31,6 +32,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">Descrição</th>
                                     <th class="text-center" scope="col">Opções</th>
+
                                 </tr>
                             </thead>
                                 <tbody>
@@ -39,16 +41,20 @@
                                             <th scope="row">{{$item->id}}</td>
                                             <td title="{{$item->name}}">{{substr($item->name, 0, 15)}}</td>
                                             <td title="{{$item->description}}">{{substr($item->description, 0, 15)}}</td>
-                                            <td class="text-center">
+                                            <td >
                                                 <a href='{{url("technology/$item->id")}}'>
                                                     <button type="button" class="btn btn-secondary">Visualizar</button>
                                                 </a>
                                                 <a href='{{url("technology/$item->id/edit")}}'>
                                                     <button type="button" class="btn btn-info">Editar</button>
                                                 </a>
-                                                <a href="">
-                                                    <button type="button" class="btn btn-danger">Excluir</button>
-                                                </a>
+                                            </td>
+                                            <td>
+                                                <form  action='{{url("technology/".$item->id."/destroy")}}' method="post" >
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button style="margin-left: -134px;" type="submit" class="btn btn-danger" >Excluir</button>
+                                                </form>
                                             </td>
                                     </tr>
                                         @endforeach

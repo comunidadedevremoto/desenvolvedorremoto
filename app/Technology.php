@@ -18,8 +18,4 @@ class Technology extends Model
     public function edit($id) {
         return $this->edit($id);
     }
-
-    //public function update(array $data) {
-    //    return $this->update( $data);
-    //}
 }
