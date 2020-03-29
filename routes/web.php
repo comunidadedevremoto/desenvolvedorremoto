@@ -21,7 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('tecnology');
+Route::get('/technology-store', 'TechnologyController@index')->name('tecnology');
 Route::get('/technology/{id}', 'TechnologyController@show')->name('tecnology');
 Route::get('/technology/{id}/edit', 'TechnologyController@edit')->name('tecnologyEdit');
 Route::put('/technology/{id}/update', 'TechnologyController@update')->name('tecnologyPut');
 Route::delete('/technology/{id}/destroy', 'TechnologyController@destroy')->name('tecnologyDelete');
+Route::post('/technology/store', 'TechnologyController@store')->name('tecnologyStore');

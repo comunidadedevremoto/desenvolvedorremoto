@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Technology;
 
 use App\Http\Requests\StoreTechnology as RequestsStoreTechnology;
+use Illuminate\Http\Request;
 
 class TechnologyController extends Controller
 {
@@ -14,8 +15,13 @@ class TechnologyController extends Controller
         $this->model = new Technology();
     }
 
-    function store(RequestsStoreTechnology $request) {
-       return $this->model->store($request->input());
+    function index(){
+        return view('technology-store');
+    }
+
+    function store(Request $request) {
+        Technology::create($request->all());
+        return redirect('home');
     }
 
     function show($id) {
@@ -26,10 +32,10 @@ class TechnologyController extends Controller
     function edit($id) {
         $technologyEdit = $this->model->find($id);
 
-        return view('edit', ['technology' => $technologyEdit]);
+        return view('technology-edit', ['technology' => $technologyEdit]);
     }
 
-    public function update(RequestsStoreTechnology $request, $id) {
+    public function update(Request $request, $id) {
         $true = $this->model->where(['id'=>$id])->update([
             'name'=>$request->name,
             'description'=>$request->description

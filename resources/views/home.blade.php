@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header">Tecnologias</div>
                 <div class="text-right mt-3 mb-2 mr-2">
-                        <a href="">
+                <a href='{{url("technology-store")}}'>
                             <button type="button" class="btn btn-success">Cadastrar</button>
                         </a>
                 </div>
