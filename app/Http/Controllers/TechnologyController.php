@@ -12,6 +12,7 @@ class TechnologyController extends Controller
     private $model;
 
     public function __construct() {
+        $this->middleware('auth');
         $this->model = new Technology();
     }
 

@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $lisOfTechnologies = $this->model->all();
+        $lisOfTechnologies = $this->model->allTechnologies();
         return view('home', ['tecnologies' => $lisOfTechnologies]);
     }
 }

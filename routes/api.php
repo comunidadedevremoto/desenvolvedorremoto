@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/technologies', 'TechnologyController@store');
-Route::get('/technologies/{$id}', 'TechnologyController@show');
-Route::put('/technology/{id}/update', 'TechnologyController@update')->name('tecnologyPut');
-Route::delete('/technology/{id}/destroy', 'TechnologyController@destroy')->name('tecnologyDelete');
+Route::post('/technologies', 'TechnologyApiController@store')->name('tecnologyStore');;
+Route::put('/technologies/{id}', 'TechnologyApiController@update')->name('tecnologyPut');
+Route::get('/technologies/{id}', 'TechnologyApiController@show')->name('tecnologyShow');
+Route::delete('/technologies/{id}', 'TechnologyApiController@destroy')->name('tecnologyDelete');

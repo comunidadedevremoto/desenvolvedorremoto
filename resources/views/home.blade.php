@@ -32,7 +32,7 @@
                                     <th scope="col">Nome</th>
                                     <th scope="col">Descrição</th>
                                     <th class="text-center" scope="col">Opções</th>
-
+                                    <th></th>
                                 </tr>
                             </thead>
                                 <tbody>
@@ -53,7 +53,7 @@
                                                 <form  action='{{url("technology/".$item->id."/destroy")}}' method="post" >
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button style="margin-left: -134px;" type="submit" class="btn btn-danger" >Excluir</button>
+                                                    <button style="margin-left: -7.3rem;" type="submit" class="btn btn-danger" >Excluir</button>
                                                 </form>
                                             </td>
                                     </tr>
